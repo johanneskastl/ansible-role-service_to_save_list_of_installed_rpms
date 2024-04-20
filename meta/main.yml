@@ -1,0 +1,27 @@
+galaxy_info:
+  role_name: 'service_to_save_list_of_installed_rpms'
+  namespace: 'johanneskastl'
+  author: 'Johannes Kastl'
+  description: 'Systemd service to save a list of all installed RPM packages on boot or shutdown'
+
+  license: 'BSD-3-Clause'
+
+  min_ansible_version: '2.12'
+
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: opensuse
+      versions:
+        - all
+    - name: SLES
+      versions:
+        - all
+
+  galaxy_tags: []
+
+dependencies: []
