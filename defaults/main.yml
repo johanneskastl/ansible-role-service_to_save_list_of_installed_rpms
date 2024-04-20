@@ -1,0 +1,4 @@
+---
+# service_to_save_list_of_installed_rpms/defaults/main.yml
+
+rpm_backup_directory: '/opt/RPMs_installed/'
