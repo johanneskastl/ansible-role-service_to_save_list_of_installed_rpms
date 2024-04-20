@@ -1,0 +1,16 @@
+[Unit]
+Description="Save list of installed RPM packages on boot and shutdown"
+ConditionFileIsExecutable=/usr/local/bin/save_list_of_installed_rpms.sh
+After=basic.target
+Before=display-manager.service systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/save_list_of_installed_rpms.sh
+ExecStop=/usr/local/bin/save_list_of_installed_rpms.sh
+TimeoutSec=0
+RemainAfterExit=yes
+StandardOutput=tty
+
+[Install]
+WantedBy=multi-user.target
