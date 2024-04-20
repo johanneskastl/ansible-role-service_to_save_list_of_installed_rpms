@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# {{ ansible_managed }}
+#
+
+set -o pipefail
+
+###################################################
+# Variables
+#
+filename="$(date +"%Y%m%d_%H%M")_RPMs_installed.txt"
+rpm_backup_directory="{{ rpm_backup_directory }}"
+
+###################################################
+# Save list of installed RPM packages
+#
+rpm -qa | sort -n > "${rpm_backup_directory}${filename}" || {
+    echo 'Error while saving the list of RPMs'
+    exit 1
+}
+
+exit 0
